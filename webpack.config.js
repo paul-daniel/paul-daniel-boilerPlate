@@ -25,7 +25,7 @@ module.exports = {
             dirNode
         ]
     },
-    
+
 
     plugins : [
         new webpack.DefinePlugin({

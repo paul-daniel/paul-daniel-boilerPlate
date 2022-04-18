@@ -1,9 +1,20 @@
-import express from 'express'
+const path = require('path')
+const express = require('express')
 const app = express()
 const port = 3000
 
+app.set('views', path.join(__dirname, 'views'))
+app.set('view engine', 'pug')
+
 app.get('/', (req, res) => {
-  res.send('Hello World!')
+  res.render('index', {
+    meta: {
+      data: {
+        title: 'Floema',
+        description: 'Metadata Description'
+      }
+    }
+  })
 })
 
 app.listen(port, () => {

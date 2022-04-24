@@ -4,8 +4,8 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "backend:build": "node app.js",
-    "backend:dev": "nodemon app.js",
+    "backend:build": "node app.mjs",
+    "backend:dev": "nodemon app.mjs",
     "frontend:build": "webpack --progress --config webpack.config.build.js",
     "frontend:development": "webpack serve --progress --config webpack.config.development.js",
     "start": "concurrently --kill-others \"npm run backend:dev\" \"npm run frontend:development\""
@@ -13,7 +13,9 @@
   "author": "Paul Daniel Tchatchouang Ouokam",
   "license": "ISC",
   "devDependencies": {
-    "babel-loader": "^8.2.4",
+    "@babel/core": "^7.17.9",
+    "@babel/preset-env": "^7.16.11",
+    "babel-loader": "^8.2.5",
     "clean-webpack-plugin": "^4.0.0",
     "copy-webpack-plugin": "^10.2.4",
     "css-loader": "^6.7.1",
@@ -28,9 +30,11 @@
     "imagemin": "^8.0.1",
     "imagemin-optipng": "^8.0.0",
     "imagemin-svgo": "^10.0.1",
+    "include-media": "^1.4.10",
     "mini-css-extract-plugin": "^2.6.0",
     "postcss-loader": "^6.2.1",
     "raw-loader": "^4.0.2",
+    "rimraf": "^3.0.2",
     "sass": "^1.49.11",
     "sass-loader": "^12.6.0",
     "webpack": "^5.71.0",
@@ -39,8 +43,14 @@
     "webpack-merge": "^5.8.0"
   },
   "dependencies": {
+    "@prismicio/client": "^6.4.3",
+    "@prismicio/helpers": "^2.3.0",
+    "concurrently": "^7.1.0",
+    "dotenv": "^16.0.0",
     "express": "^4.17.3",
+    "node-fetch": "^3.2.3",
     "nodemon": "^2.0.15",
+    "prismic-dom": "^2.2.7",
     "pug": "^3.0.2"
   }
 }
